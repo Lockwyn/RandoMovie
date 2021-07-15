@@ -13,9 +13,16 @@ def scrapUrl_Gmtw(url):
         entry=h.find("a").text.split("(")
         movies.append({'title': entry[0].strip(),'year': entry[1]})
     return movies
-urls=[
-    "https://agoodmovietowatch.com/netflix/23-best-netflix/"
-]
 
 
-print(scrapUrl_Gmtw(urls[0]))
+def process():
+    movies=[]
+    urls = [
+        "https://agoodmovietowatch.com/netflix/23-best-netflix/"
+    ]
+    for url in urls:
+        movies=movies+scrapUrl_Gmtw(url)
+    return movies
+
+
+

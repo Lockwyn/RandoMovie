@@ -5,7 +5,7 @@ def writeCSV(movies,dest='movies.csv'):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for m in movies:
-            writer.writerow({'title': m[0], 'year': m[1]})
+            writer.writerow(m)
 
 def readCSV(source='movies.csv'):
     result=[]
