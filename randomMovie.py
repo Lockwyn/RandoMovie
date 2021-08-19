@@ -1,13 +1,15 @@
 import imdb
 import goodmovietowatch
+import RottenToms
 import random
 import cache
 import argparse
 
 def fetch():
     movies=[]
-    movies=movies+imdb.process()
+    movies = movies + imdb.process()
     movies = movies + goodmovietowatch.process()
+    movies = movies + RottenToms.process()
     cache.writeCSV(movies)
 
 
